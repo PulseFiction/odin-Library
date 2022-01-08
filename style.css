@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #EAF2EF;
+    font-family: 'Playfair Display', serif;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 20pt;
+}
+
+hr {
+    width: 12rem;
+    color: rgb(255, 255, 255);
+    
+}
+
+/* Form */
+
+.form__container {
+    text-align: center;
+    line-height: 1.6rem;
+    
+}
+
+.add__book {
+    margin-top: 1rem;
+    width: 6rem;
+    height: 2rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    background-color: #153243;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 black;
+}
+
+
+
+/* Card */
+
+.container {
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 55rem;
+    gap: 1rem;
+    
+
+}
+.card {
+    width: 12rem;
+    height: 12rem;
+    background-color: #153243;
+    color: #FFC600;
+    display: flex;
+    flex-direction: column;
+    line-height: 0;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px 0px #000000;
+}
+
+.card__read {
+    margin-top: 1rem;
+    width: 5rem;
+    height: 2rem;
+    color: rgb(0, 0, 0);
+    font-size: 15pt;
+    font-weight: bold;
+    background-color: #8ee249;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    
+}
+
+.card__not-read {
+    margin-top: 1rem;
+    width: 5rem;
+    height: 2rem;
+    color: rgb(0, 0, 0);
+    font-size: 15pt;
+    font-weight: bold;
+    background-color: #e24949;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+
+
+/* Hovers */
+
+
+.add__book:hover {
+    background-color: #3279a1;
+    cursor: pointer;
+}
+
