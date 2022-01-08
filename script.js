@@ -74,7 +74,17 @@ function addBookToLibrary() {
     container.appendChild(cardDiv);
     
     
+
+    cardDiv.addEventListener('click', () => {
+        cardDiv.removeChild(newHeading);
+        cardDiv.removeChild(line);
+        cardDiv.removeChild(authParagraph);
+        cardDiv.removeChild(pagesParagraph);
+        cardDiv.removeChild(readDiv);
+        container.removeChild(cardDiv)
+    })
 }
+
 
 
 
