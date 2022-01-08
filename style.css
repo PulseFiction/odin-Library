@@ -115,3 +115,7 @@ hr {
     cursor: pointer;
 }
 
+.card:hover {
+    cursor: pointer;
+}
+
