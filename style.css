@@ -55,9 +55,11 @@ hr {
 .container {
     margin-top: 5rem;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     max-width: 55rem;
     gap: 1rem;
+    
     
 
 }
@@ -93,7 +95,7 @@ hr {
 
 .card__not-read {
     margin-top: 1rem;
-    width: 5rem;
+    width: 6rem;
     height: 2rem;
     color: rgb(0, 0, 0);
     font-size: 15pt;
