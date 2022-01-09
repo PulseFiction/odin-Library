@@ -61,36 +61,44 @@ function addBookToLibrary() {
     
     const cardDiv = document.createElement('div');
     const newHeading = document.createElement('h2');
+    const line = document.createElement('hr')
     const authParagraph = document.createElement('p');
     const pagesParagraph = document.createElement('p');
-    const readDiv = document.createElement('div');
-    const line = document.createElement('hr')
+    const buttonDiv = document.createElement('div');
+    const readBtn = document.createElement('button');
+    const removeBtn = document.createElement('button')
+    
 
     cardDiv.classList.add('card');
     newHeading.classList.add('card__title');
-    
     authParagraph.classList.add('card__author');
     pagesParagraph.classList.add('card__pages');
+    buttonDiv.classList.add('button-container');
+    removeBtn.classList.add('remove')
 
      
 
     if (userBook.read === 'Read') {
-        readDiv.classList.add('card__read')
+        readBtn.classList.add('card__read')
     } else {
-        readDiv.classList.add('card__not-read')
+        readBtn.classList.add('card__not-read')
     }
     
     newHeading.textContent = userBook.title;
     authParagraph.textContent = 'By ' + userBook.author;
     pagesParagraph.textContent = 'Pages: ' + userBook.pages;
-    readDiv.textContent = userBook.read;
+    readBtn.textContent = userBook.read;
+    removeBtn.textContent = 'Remove'
     
+    buttonDiv.appendChild(readBtn)
+    buttonDiv.appendChild(removeBtn)
 
     cardDiv.appendChild(newHeading);
     cardDiv.appendChild(line);
     cardDiv.appendChild(authParagraph);
     cardDiv.appendChild(pagesParagraph);
-    cardDiv.appendChild(readDiv)
+    cardDiv.appendChild(buttonDiv)
+   // cardDiv.appendChild(readBtn)
     container.appendChild(cardDiv);
     
     
@@ -113,7 +121,20 @@ function addBookToLibrary() {
     }
     
 
-    cardDiv.addEventListener('click', () => {
+
+    readBtn.addEventListener('click', () => {
+        if (readBtn.textContent === 'Read') {
+            readBtn.classList.remove('card__read')
+            readBtn.classList.add('card__not-read')
+            readBtn.textContent = 'Not Read'
+        } else {
+            readBtn.textContent = 'Read'
+            readBtn.classList.remove('card__not-read')
+            readBtn.classList.add('card__read')
+        }
+    })
+
+    removeBtn.addEventListener('click', () => {
         container.removeChild(cardDiv)
     })
 }

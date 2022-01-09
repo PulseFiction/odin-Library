@@ -83,13 +83,14 @@ hr {
     width: 5rem;
     height: 2rem;
     color: rgb(0, 0, 0);
-    font-size: 15pt;
+    font-size: 10pt;
     font-weight: bold;
     background-color: #8ee249;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+    border-style: none;
     
 }
 
@@ -98,13 +99,36 @@ hr {
     width: 6rem;
     height: 2rem;
     color: rgb(0, 0, 0);
-    font-size: 15pt;
+    font-size: 10pt;
     font-weight: bold;
     background-color: #e24949;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+    border-style: none;
+}
+
+.button-container {
+    
+    display: flex;
+    gap: 1rem;
+
+    
+}
+.remove {
+    margin-top: 1rem;
+    width: 5rem;
+    height: 2rem;
+    color: rgb(0, 0, 0);
+    font-size: 10pt;
+    font-weight: bold;
+    background-color: #f9fff5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border-style: none;
 }
 
 
@@ -117,7 +141,12 @@ hr {
     cursor: pointer;
 }
 
-.card:hover {
+.remove:hover,
+.card__read:hover,
+.card__not-read:hover {
+    background-color: #3279a1;
     cursor: pointer;
 }
+
+
 
