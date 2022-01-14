@@ -1,5 +1,5 @@
 # Library Project 
-## as part of The Odin Project Javascript Curriculum
+## As part of The Odin Project Javascript Curriculum
 
 ### Assignment
 
