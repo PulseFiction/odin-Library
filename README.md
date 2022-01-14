@@ -1,4 +1,9 @@
-# odin-Library
+# Library Project 
+## as part of The Odin Project Javascript Curriculum
 
-Live Link:
+### Assignment
+
+Create a Library using object constructors.
+
+### Live Link
 https://pulsefiction.github.io/odin-Library/

@@ -11,29 +11,20 @@ const container = document.querySelector('.container');
 
 bookBtn.addEventListener('click', addBookToLibrary);
 
-yesBox.addEventListener('click', () => {
-    if (yesBox.checked === true) {
-        noBox.checked = false;
-    } else {    
-        yesBox.checked = false;
-    }
-});
-noBox.addEventListener('click', () => {
-    if (noBox.checked === true) {
-        yesBox.checked = false;
-    } else {    
-        noBox.checked = false;
-    }
-})
+yesBox.addEventListener('click', () => yesBox.checked === true ? noBox.checked = false : yesBox.checked = false);
+noBox.addEventListener('click', () => noBox.checked === true ? yesBox.checked = false : noBox.checked = false);
 
 
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-   
-}
+
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+    }
+};
+
 
 
    
@@ -42,23 +33,26 @@ function addBookToLibrary() {
     const authorValue = userAuthor.value;
     let pagesValue = userPages.value;
     
-    if (pagesValue > 100000) {
-        pagesValue = 100000;
-    } 
+     if (pagesValue > 5000) {
+        pagesValue = 5000;
+    };
 
     
     let userBook = {}
+
     if (yesBox.checked === true) {
         userBook = new Book(titleValue, authorValue, pagesValue, 'Read')
-    myLibrary.push(userBook)       
+        myLibrary.push(userBook)       
     } else {
         userBook = new Book(titleValue, authorValue, pagesValue, 'Not read')
-    myLibrary.push(userBook)
-    }
+        myLibrary.push(userBook)
+    };
 
     console.log(myLibrary)
-   
-    
+
+
+    /* New Elements */
+
     const cardDiv = document.createElement('div');
     const newHeading = document.createElement('h2');
     const line = document.createElement('hr')
@@ -69,20 +63,8 @@ function addBookToLibrary() {
     const removeBtn = document.createElement('button')
     
 
-    cardDiv.classList.add('card');
-    newHeading.classList.add('card__title');
-    authParagraph.classList.add('card__author');
-    pagesParagraph.classList.add('card__pages');
-    buttonDiv.classList.add('button-container');
-    removeBtn.classList.add('remove')
-
-     
-
-    if (userBook.read === 'Read') {
-        readBtn.classList.add('card__read')
-    } else {
-        readBtn.classList.add('card__not-read')
-    }
+    /* Text contents */
+    
     
     newHeading.textContent = userBook.title;
     authParagraph.textContent = 'By ' + userBook.author;
@@ -90,19 +72,32 @@ function addBookToLibrary() {
     readBtn.textContent = userBook.read;
     removeBtn.textContent = 'Remove'
     
-    buttonDiv.appendChild(readBtn)
-    buttonDiv.appendChild(removeBtn)
+    /* Appends */
 
     cardDiv.appendChild(newHeading);
     cardDiv.appendChild(line);
     cardDiv.appendChild(authParagraph);
     cardDiv.appendChild(pagesParagraph);
     cardDiv.appendChild(buttonDiv)
-   // cardDiv.appendChild(readBtn)
     container.appendChild(cardDiv);
+    buttonDiv.appendChild(readBtn);
+    buttonDiv.appendChild(removeBtn);
     
     
-    
+    /* Class Lists */
+
+    cardDiv.classList.add('card');
+    newHeading.classList.add('card__title');
+    authParagraph.classList.add('card__author');
+    pagesParagraph.classList.add('card__pages');
+    buttonDiv.classList.add('button-container');
+    removeBtn.classList.add('remove')
+
+    if (userBook.read === 'Read') {
+        readBtn.classList.add('card__read')
+    } else {
+        readBtn.classList.add('card__not-read')
+    }
 
 
 
@@ -121,7 +116,7 @@ function addBookToLibrary() {
     }
     
 
-
+    
     readBtn.addEventListener('click', () => {
         if (readBtn.textContent === 'Read') {
             readBtn.classList.remove('card__read')
@@ -133,11 +128,12 @@ function addBookToLibrary() {
             readBtn.classList.add('card__read')
         }
     })
-
+    
     removeBtn.addEventListener('click', () => {
         container.removeChild(cardDiv)
     })
-}
+        
+};
 
 
 
