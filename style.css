@@ -54,9 +54,11 @@ hr {
 
 .container {
     margin-top: 5rem;
-    display: flex;
+    display: grid;
+    flex-direction: ;
+    grid-template-columns: repeat(3, auto);
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
     max-width: 55rem;
     gap: 1rem;
     
