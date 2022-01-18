@@ -65,11 +65,13 @@ function addBookToLibrary() {
 
     /* Text contents */
     
-    
-    newHeading.textContent = userBook.title;
-    authParagraph.textContent = 'By ' + userBook.author;
-    pagesParagraph.textContent = 'Pages: ' + userBook.pages;
-    readBtn.textContent = userBook.read;
+    for (prop in myLibrary) {
+        newHeading.textContent = myLibrary[prop].title;
+        authParagraph.textContent = 'By ' + myLibrary[prop].author;
+        pagesParagraph.textContent = 'Pages: ' + myLibrary[prop].pages;
+        readBtn.textContent = myLibrary[prop].read;
+    }
+  
     removeBtn.textContent = 'Remove'
     
     /* Appends */
